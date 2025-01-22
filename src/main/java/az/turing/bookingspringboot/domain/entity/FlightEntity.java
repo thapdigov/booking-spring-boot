@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "flight")
 @Data
@@ -25,4 +27,7 @@ public class FlightEntity {
     private Integer availableSeat;
     @Column(name = "totalSeat")
     private Integer totalSeat;
+    @Column(name = "createdAt")
+    private LocalDateTime createdAt;
+
 }
