@@ -1,5 +1,6 @@
 package az.turing.bookingspringboot.domain.entity;
 
+import az.turing.bookingspringboot.domain.enums.PassengerStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,4 +22,6 @@ public class PassengerEntity {
     private String name;
     @Column(name = "surname")
     private String surname;
+    @Column(name = "status")
+    private PassengerStatus status;
 }
