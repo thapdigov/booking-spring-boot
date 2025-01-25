@@ -23,4 +23,13 @@ public class GlobalExceptionHandler {
                 .timeStump(LocalDateTime.now())
                 .build());
     }
+    @ExceptionHandler(AlreadyExistsException.class)
+    public ResponseEntity<GlobalErrorResponse> alreadyExistsExceptionHandler(AlreadyExistsException exception) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(GlobalErrorResponse.builder()
+                .requestId(UUID.randomUUID())
+                .errorCode(ErrorCode.ALREADY_EXISTS)
+                .message(exception.getMessage())
+                .timeStump(LocalDateTime.now())
+                .build());
+    }
 }
